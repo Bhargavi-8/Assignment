@@ -1,0 +1,79 @@
+<div class="homePage" ng-controller="HomeController">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
+    <div>
+      <a class="navbar-brand" style="font-size: 2em;" href="#">
+        <!-- <span style="color: black;">Your</span> <span style="color: red;">logo</span> -->
+        <img src="https://workablehr.s3.amazonaws.com/uploads/account/logo/198752/koru-logo-for-gapps-01.png"
+          alt="Koru UX Design LLP" width="155px" height="64px">
+      </a>
+    </div>
+  </nav>
+  <hr class="mt-0">
+  <div class="content">
+    <div class="col-md-12 row header-content">
+      <h4 class="col-md-6">User list</h4>
+      <button type="button" class="btn btn-danger col-md-2" data-bs-target="#deleteModal" data-bs-toggle="modal"
+        ng-disabled="!isChecked()">Delete</button>
+    </div>
+
+    <table class="table table-bordered table-responsive user-table mt-3" cellpadding="0" cellspacing="0">
+      <thead>
+        <tr>
+          <th scope="col" class="checkbox">
+            <input type="checkbox" ng-model="IsAllChecked" ng-change="CheckUncheckAll()"
+              ng-init="IsAllChecked = false" />
+          </th>
+          <th scope="col">User Name</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Email ID</th>
+          <th scope="col">Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in users">
+          <td class="checkbox"><input id="chkuser_{{user.userName}}" type="checkbox" ng-model="user.Selected"
+              ng-change="CheckUncheckHeader()" /></td>
+          <td>{{user.userName}}</td>
+          <td>{{user.phoneNumber}}</td>
+          <td>{{user.emailID}}</td>
+          <td>
+            <button type="button" class="btn btn-light" data-bs-target="#deleteModal" data-bs-toggle="modal"
+              ng-disabled="!user.Selected">
+              <span class="bi bi-trash"></span>
+            </button>
+            <i class="bi bi-grip-horizontal"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--Delete Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <!-- <span id="boot-icon" class="bi bi-slash-circle-fill" style="font-size: 80px; color: rgb(255, 0, 0); -webkit-text-stroke-width: 0px;"></span> -->
+          <img src="public/deleteModalIcon.png" alt="">
+          <div class="content-confirm">
+            <p>Are you sure you want to delete?</p>
+            <div class="buttons">
+            <button type="button" class="btn btn-danger" ng-click="deleteUser();" data-bs-target="#deleteSuccessModal"
+              data-bs-toggle="modal">Yes</button>
+            <button type="button" class="btn btn-secondary" id="close-modal" data-bs-dismiss="modal">Cancel</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Login Success Modal -->
+  <div class="modal fade delete-success" id="deleteSuccessModal" tabindex="-1" role="dialog"
+    aria-labelledby="deleteSuccessModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">Deleted Succesfully
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+</div>

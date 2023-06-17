@@ -1,0 +1,235 @@
+/* Login Page Styles */
+.loginPage {
+    height: 100vh;
+    overflow: auto;
+}
+
+.login-header {
+    font-size: 1.5em;
+}
+
+.login-form {
+    width: 50%;
+}
+
+.left-pane {
+    background-color: #FADEDC;
+    display: inline-flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.left-pane .main-heading {
+    font-size: 3em;
+    margin-left: 0.5em;
+    line-height: 1.3em;
+}
+
+.left-pane .sub-heading {
+    margin-left: 1.5em;
+    max-width: 80%;
+    line-height: 1.3em;
+}
+
+.right-pane {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lock-icon.bi-lock {
+    display: inline-block;
+    border-radius: 60px;
+    padding: 0.5em 0.7em;
+    background-color: #FADEDC;
+    color: #fc8f8e;
+}
+
+.pwd-warn::before {
+    font-family: "bootstrap-icons";
+    content: "\26A0";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    color: red;
+    margin-top: -7px;
+}
+
+.has-success {
+    border: 2px solid #90d7bc;
+    border-radius: var(--bs-border-radius);
+}
+
+.has-error {
+    border: 2px solid red;
+    border-radius: var(--bs-border-radius);
+}
+
+.has-success #password {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.bi-check-circle::before{
+    color:  #90d7bc;
+    font-size: 1.25em;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+.input-group-prepend .input-group-text {
+    border-radius: var(--bs-border-radius);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #fff;
+    padding-right: 0.5em;
+}
+
+#userName {
+    border-left: 0;
+    padding-left: 0;
+}
+
+.input-group-append .input-group-text {
+    border-radius: var(--bs-border-radius);
+    background-color: #fff;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#password {
+    border-radius: var(--bs-border-radius);
+    border-left: 0;
+    padding-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+.help-block {
+    color: red;
+    line-height: 1.2em;
+}
+
+.forgot-password {
+    display: block;
+    text-decoration: none;
+    text-align: right;
+    color: #00000094;
+    margin-bottom: 1rem;
+}
+
+.sign-up {
+    text-align: center;
+}
+
+.sign-up span {
+    color: #00000094;
+}
+
+.sign-up a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Home page styles */
+
+.homePage {
+    max-width: inherit;
+}
+
+.homePage .header-content {
+    justify-content: space-between;
+}
+
+.user-table th,
+.user-table td {
+    vertical-align: middle;
+}
+
+.checkbox {
+    text-align: center;
+}
+
+#deleteModal .modal-header {
+    justify-content: flex-end;
+}
+
+#deleteModal .modal-body {
+    display: inline-flex;
+    padding: 0;
+    align-items: center;
+}
+
+#deleteModal .modal-dialog {
+    max-width: 370px;
+}
+
+#deleteModal .modal-content {
+    border-radius: unset;
+}
+
+#deleteModal .content-confirm{
+    margin-left: 1em;
+}
+
+#deleteModal .buttons {
+    text-align: right;
+    margin-right: -2em;
+}
+
+.delete-success {
+    position: relative !important;
+    display: block !important;
+}
+
+.delete-success .modal-dialog {
+    margin-right: 0;
+    text-align: right;
+}
+
+.delete-success .modal-dialog button {
+    background-color: #85c885;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 767px) {
+
+/* mobile login styles */
+
+    .left-pane {
+        order: 2;
+    }
+
+    .left-pane .main-heading {
+        font-size: 2em;
+    }
+
+/* mobile home styles */
+
+    table {
+        display: block;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        margin: 0 auto;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .row.header-content>* {
+        width: auto;
+    }
+
+    .navbar {
+        justify-content: center !important;
+    }
+}

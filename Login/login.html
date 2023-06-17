@@ -1,0 +1,59 @@
+<div class="loginPage row col-md-12">
+    <div class="left-pane col-md-6">
+        <p class="main-heading"><b>Digital</b> Platform
+            <br>
+            for distance <b>learning</b>
+        </p>
+        <p class="sub-heading">Internet and online based digital technologies such as desktop computers, mobile phones
+            and other</p>
+    </div>
+    <div class="right-pane col-md-6">
+        <img src="https://workablehr.s3.amazonaws.com/uploads/account/logo/198752/koru-logo-for-gapps-01.png"
+            alt="Koru UX Design LLP" width="155px" height="64px">
+        <i class="bi bi-lock lock-icon mt-5"></i>
+        <div class="login-header mt-3"><b>Welcome Back</b></div>
+        <div class="login-form mt-4">
+            <form class="form-horizontal" role="form" id="loginForm" name="loginForm" novalidate>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="bi bi-person"></i>
+                            </span>
+                        </div>
+                        <input type="text" id="userName" name="userName" placeholder='User Name' class="form-control border-left-0"
+                            ng-model="userName" required />     
+                    </div>
+                    <p class="help-block" ng-show="loginForm.userName.$touched && loginForm.userName.$invalid">
+                        Please enter User Name</p>
+                </div>
+                <div class="form-group mt-2">
+                    <div class="input-group" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$dirty, 'has-success': loginForm.password.$valid}">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="bi bi-lock"></i>
+                            </span>
+                        </div>
+                        <input type="password" id="password" name="password" placeholder="Password" class="form-control"
+                            ng-model="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  ng-minLength="8" required />
+                            <div ng-show="loginForm.password.$valid" class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="bi bi-check-circle"></i>
+                                </span>
+                            </div>
+                    </div>
+                    <p class="help-block"
+                    ng-show="loginForm.password.$touched && loginForm.password.$error.required">Please enter
+                    Password</p>
+                    <p class="help-block pwd-warn mt-2" ng-if="loginForm.password.$invalid && loginForm.password.$dirty">
+                    Please enter atleast 8 characters with number, symbol, capital and small letter</p>
+                </div>
+                <a href=# class="forgot-password mt-2">Forgot Password?</a>
+                <button type="button" class="btn btn-primary form-control col-sm-offset-3"
+                    ng-disabled="loginForm.userName.$invalid || loginForm.password.$invalid"
+                    ng-click="authenticate(userName)">Login</button>
+            </form>
+            <p class="sign-up mt-4"><span>Don't have an Account?</span> <a href="#"><b>Sign Up</b></a></p>
+        </div>
+    </div>
+</div>
