@@ -1,4 +1,3 @@
-var app = angular.module('myApp');
  app.controller('LoginController', function($scope, $location) {
    // $rootScope.title = "AngularJS Login Sample";
     

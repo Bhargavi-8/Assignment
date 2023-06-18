@@ -1,4 +1,3 @@
-var app = angular.module('myApp');
 app.controller('HomeController', function ($scope, $http, $window, $routeParams) {
    $scope.username = $routeParams.username;
    $scope.users=[];
@@ -10,22 +9,22 @@ app.controller('HomeController', function ($scope, $http, $window, $routeParams)
         console.log(response.status);
     });
 
-    // $scope.deleteUser = function (username){
-    //     $scope.users.splice(username,1);
-    //     alert("JSON Name is deleted");
-    //   }
+    $scope.reverse = false;
+    $scope.sortKey = '';
+
+    $scope.sort = function (keyname) {
+        $scope.sortKey = keyname;
+        $scope.reverse = !$scope.reverse;
+    } 
+
     $scope.CheckUncheckHeader = function () {
         $scope.IsAllChecked = true;
-        // $scope.enableDeleteBtn = $.grep($scope.users, function (user) {
-        //     return user.IsSelected;
-        // }).length >= 1;
         for (var i = 0; i < $scope.users.length; i++) {
             if (!$scope.users[i].Selected) {
                 $scope.IsAllChecked = false;
                 break;
-            }
-            
-        };
+            }          
+        }
     };
     $scope.CheckUncheckHeader();
 
@@ -43,13 +42,7 @@ app.controller('HomeController', function ($scope, $http, $window, $routeParams)
         }
         return false;
     };
-    // $scope.userSelectionChanged = function () {
-    //     $scope.enableAddBtn = $.grep($scope.users, function (user) {
-    //         return user.Selected;
-    //     }).length >= 1;
-    //     console.log($scope.enableAddBtn);
-    // };
-
+    
     $scope.deleteUser = function () {
         $('#deleteModal').hide();
         $('.modal-backdrop').hide();
@@ -64,16 +57,4 @@ app.controller('HomeController', function ($scope, $http, $window, $routeParams)
         }
         console.log('after deleting', $scope.users);
     };
-   
 });   
-
-// app.directive('deleteModal', function() {
-//     return {
-//       restrict: 'A',
-//       link: function(scope, element, attr) {
-//         scope.dismiss = function() {
-//             element.modal('hide');
-//         };
-//       }
-//     } 
-//  });
