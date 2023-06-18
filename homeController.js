@@ -1,6 +1,6 @@
 app.controller('HomeController', function ($scope, $http, $window, $routeParams) {
-   $scope.username = $routeParams.username;
-   $scope.users=[];
+    $scope.username = $routeParams.username;
+    $scope.users = [];
     console.log($scope.username);
     $http.get('db.json').then(function successCallback(response) {
         $scope.users = response.data;
@@ -15,7 +15,7 @@ app.controller('HomeController', function ($scope, $http, $window, $routeParams)
     $scope.sort = function (keyname) {
         $scope.sortKey = keyname;
         $scope.reverse = !$scope.reverse;
-    } 
+    }
 
     $scope.CheckUncheckHeader = function () {
         $scope.IsAllChecked = true;
@@ -23,7 +23,7 @@ app.controller('HomeController', function ($scope, $http, $window, $routeParams)
             if (!$scope.users[i].Selected) {
                 $scope.IsAllChecked = false;
                 break;
-            }          
+            }
         }
     };
     $scope.CheckUncheckHeader();
@@ -34,15 +34,15 @@ app.controller('HomeController', function ($scope, $http, $window, $routeParams)
         }
     };
 
-    $scope.isChecked = function() {
-        for(var e in $scope.users) {
-             var user = $scope.users[e];
-            if(user.Selected)
+    $scope.isChecked = function () {
+        for (var e in $scope.users) {
+            var user = $scope.users[e];
+            if (user.Selected)
                 return true;
         }
         return false;
     };
-    
+
     $scope.deleteUser = function () {
         $('#deleteModal').hide();
         $('.modal-backdrop').hide();

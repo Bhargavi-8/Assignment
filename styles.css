@@ -73,8 +73,8 @@
     border-bottom-right-radius: 0;
 }
 
-.bi-check-circle::before{
-    color:  #90d7bc;
+.bi-check-circle::before {
+    color: #90d7bc;
     font-size: 1.25em;
 }
 
@@ -175,13 +175,17 @@
     border-radius: unset;
 }
 
-#deleteModal .content-confirm{
+#deleteModal .content-confirm {
     margin-left: 1em;
 }
 
 #deleteModal .buttons {
     text-align: right;
     margin-right: -2em;
+}
+
+.logged-in {
+    text-align: right;
 }
 
 .delete-success {
@@ -194,7 +198,7 @@
     text-align: right;
 }
 
-.delete-success .modal-dialog button {
+.delete-success .modal-dialog button, .login-success {
     background-color: #85c885;
     color: white;
     padding: 8px 15px;
@@ -205,22 +209,19 @@
 .sortorder:after {
     content: '\25b2';
     font-size: 0.7em;
-} 
+}
+
 .sortorder.descending:after {
     content: '\25bc';
 }
 
-.table-row-selected{
-    background-color: black;
-}
-
-tbody tr.active{
+tbody tr.highlightbg td {
     background-color: #ffdada;
 }
 
 @media screen and (max-width: 767px) {
 
-/* mobile login styles */
+    /* mobile login styles */
 
     .left-pane {
         order: 2;
@@ -230,7 +231,7 @@ tbody tr.active{
         font-size: 2em;
     }
 
-/* mobile home styles */
+    /* mobile home styles */
 
     table {
         display: block;
