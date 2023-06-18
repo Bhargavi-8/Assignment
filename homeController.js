@@ -45,7 +45,7 @@ app.controller('HomeController', function ($scope, $http, $window, $routeParams)
 
     $scope.deleteUser = function () {
         $('#deleteModal').hide();
-        $('.modal-backdrop').hide();
+        // $('.modal-backdrop').hide();
         var selected = new Array();
         for (var i = 0; i < $scope.users.length; i++) {
             if ($scope.users[i].Selected) {
@@ -57,4 +57,8 @@ app.controller('HomeController', function ($scope, $http, $window, $routeParams)
         }
         console.log('after deleting', $scope.users);
     };
+
+    setTimeout(function() {
+        $('.logged-in').fadeOut('fast');       
+    }, 2000);
 });   

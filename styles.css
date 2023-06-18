@@ -148,6 +148,12 @@
     justify-content: space-between;
 }
 
+.homePage .nav-hr {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 5px 5px -5px #333 inset;
+}
+
 .user-table th,
 .user-table td {
     vertical-align: middle;
@@ -168,7 +174,7 @@
 }
 
 #deleteModal .modal-dialog {
-    max-width: 370px;
+    width: 360px;
 }
 
 #deleteModal .modal-content {
@@ -219,6 +225,25 @@ tbody tr.highlightbg td {
     background-color: #ffdada;
 }
 
+.bi-info-circle-fill::before {
+    color: #1494d5;
+    margin-left: 5px;
+}
+
+.options {
+    text-align: right;
+}
+
+.bi-check2-circle::before {
+    margin-right: 6px;
+    font-size: 1.2em;
+}
+
+.modal.show {
+    display: flex !important;
+    align-items: center;
+}
+
 @media screen and (max-width: 767px) {
 
     /* mobile login styles */
@@ -249,4 +274,5 @@ tbody tr.highlightbg td {
     .navbar {
         justify-content: center !important;
     }
+
 }
