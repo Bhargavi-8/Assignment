@@ -44,8 +44,9 @@ app.controller('HomeController', function ($scope, $http, $window, $routeParams)
     };
 
     $scope.deleteUser = function () {
-        $('#deleteModal').hide();
+        // $('#deleteModal').hide();
         // $('.modal-backdrop').hide();
+        $(".modal-backdrop").remove();
         var selected = new Array();
         for (var i = 0; i < $scope.users.length; i++) {
             if ($scope.users[i].Selected) {
@@ -56,6 +57,10 @@ app.controller('HomeController', function ($scope, $http, $window, $routeParams)
             $scope.users.splice(selected[i], 1);
         }
         console.log('after deleting', $scope.users);
+        setTimeout(function() {
+            $('.delete-success').fadeOut('fast');  
+            $('.modal').modal('hide');     
+        }, 2000);
     };
 
     setTimeout(function() {

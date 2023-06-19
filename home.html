@@ -56,7 +56,7 @@
   </div>
   <!--Delete Modal -->
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
-    aria-hidden="true">
+    aria-hidden="true" aria-modal="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-body">
@@ -66,7 +66,7 @@
             <p>Are you sure you want to delete?</p>
             <div class="buttons">
               <button type="button" class="btn btn-danger" ng-click="deleteUser();" data-bs-target="#deleteSuccessModal"
-                data-bs-toggle="modal">Yes</button>
+                data-bs-toggle="modal" data-bs-dismiss="modal">Yes</button>
               <button type="button" class="btn btn-secondary" id="close-modal" data-bs-dismiss="modal">Cancel</button>
             </div>
           </div>
@@ -79,7 +79,7 @@
   <div class="logged-in">
     <button type="button" class="login-success" aria-label="Close">
       <i class="bi bi-check2-circle"></i>
-      <b>Logged Succesfully</b>
+      <b>Login Succesfully</b>
       <span aria-hidden="true" onclick="this.parentNode.remove(); return false;">&times;</span>
     </button>
   </div>
