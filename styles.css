@@ -212,9 +212,19 @@
     font-size: 1.2em;
 }
 
+.sortorder {
+    position: absolute;
+    margin-left: 4px;
+    margin-top: -5px;
+}
+
+.sortorder.descending {
+    margin-top: 3px;
+}
+
 .sortorder:after {
     content: '\25b2';
-    font-size: 0.7em;
+    font-size: 0.5em;
 }
 
 .sortorder.descending:after {

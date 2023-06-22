@@ -6,7 +6,7 @@ var app = angular.module('myApp', ['ngRoute', 'ngDragDrop']);
             templateUrl: 'Login/login.html',
             controller: 'LoginController'
         }).when('/home/:username', {
-            templateUrl: 'home.html',
+            templateUrl: 'Home/home.html',
             controller: 'HomeController'
         }).otherwise({
             redirectTo: "/"

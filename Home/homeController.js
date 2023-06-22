@@ -44,8 +44,6 @@ app.controller('HomeController', function ($scope, $http, $window, $routeParams)
     };
 
     $scope.deleteUser = function () {
-        // $('#deleteModal').hide();
-        // $('.modal-backdrop').hide();
         $(".modal-backdrop").remove();
         var selected = new Array();
         for (var i = 0; i < $scope.users.length; i++) {
